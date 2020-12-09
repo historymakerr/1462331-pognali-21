@@ -1,0 +1,53 @@
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list__link {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-family: "BloggerSans", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  text-transform: uppercase;
+  transition: all 0.1s ease-in;
+
+  @media (min-width: 768px) {
+    font-size: 60px;
+    line-height: 71px;
+    text-align: left;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    overflow: hidden;
+
+    span {
+      position: relative;
+      display: inline-block;
+      transition: all 0.2s linear;
+    }
+
+    span::before {
+      position: absolute;
+      top: 100%;
+      content: attr(data-hover);
+      font: inherit;
+      color: $basic-yellow;
+    }
+
+    &:hover span {
+      transform: translateY(-100%);
+    }
+
+    &:active span::before {
+      color: rgba($basic-yellow, 0.3);
+    }
+  }
+}

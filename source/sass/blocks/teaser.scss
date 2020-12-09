@@ -1,0 +1,179 @@
+.teaser {
+  background-color: #192144;
+
+  @media (min-width: 768px) {
+    padding-top: 29px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-top: 0;
+  }
+}
+
+.teaser__wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  @media (min-width: 768px) {
+    min-height: 953px;
+    background-image:
+    url("../img/traveller-tablet.svg"),
+      url("../img/globe-back-tablet.png");
+    background-repeat: no-repeat;
+    background-size: auto, cover;
+    background-position: 72% 72.4%, bottom;
+  }
+
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    min-height: 750px;
+    padding: 0 87px 0 127px;
+    background-image:
+      url("../img/traveller-illustration-desktop.png"),
+      url("../img/globe-back-desktop.png");
+    background-repeat: no-repeat;
+    background-size: auto, cover;
+    background-position: 59.9% 87.4%, bottom;
+  }
+}
+
+.teaser__inner {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-height: 478px;
+  padding-top: 57px;
+  background-image:
+  url("../img/traveller-mobile.svg"),
+    url("../img/globe-back-mobile.png");
+  background-repeat: no-repeat;
+  background-position: 63% bottom, 0 0;
+  background-size: auto, cover;
+
+  @media (min-width: 500px) {
+    background-position: 63% bottom, 0 -150px;
+  }
+
+  @media (min-width: 625px) {
+    background-position: 63% bottom, 0 -275px;
+  }
+
+  @media (min-width: 768px) {
+    min-height: 0;
+    background-image: none;
+  }
+
+  @media (min-width: 1440px) {
+    padding-top: 131px;
+  }
+}
+
+.teaser__inner-center {
+  max-width: 490px;
+  padding: 0 25px;
+  margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1440px) {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.teaser__text {
+  padding: 0 15px;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+  flex-grow: 1;
+
+  @media (min-width: 768px) {
+    margin-bottom: 40px;
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.teaser__user-nav {
+  margin-bottom: -21px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.teaser__review {
+  background-color: #161c35;
+  padding-top: 48px;
+  padding-bottom: 109px;
+
+  @media (min-width: 768px) {
+    background-color: transparent;
+  }
+
+  @media (min-width: 1440px) {
+    padding-top: 204px;
+  }
+}
+
+.teaser__review-container {
+  max-width: 490px;
+  padding: 0 25px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 0 40px;
+  }
+
+  @media (min-width: 1440px) {
+    margin: 0;
+    max-width: none;
+    padding: 0;
+  }
+}
+
+.teaser__review-text {
+  margin: 0;
+  padding-left: 26px;
+
+  @media (min-width: 768px) {
+    padding-left: 33px;
+  }
+}
+
+.teaser__review-cite {
+  max-width: 165px;
+  display: block;
+  margin-top: 18px;
+  font-weight: 700;
+  font-style: normal;
+
+  br {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    max-width: none;
+    margin-top: 45px;
+    font-size: 21px;
+    line-height: 25px;
+
+    br {
+      display: block;
+    }
+  }
+}
+

@@ -1,0 +1,113 @@
+.map {
+  margin-top: -100px;
+  padding-top: 50px;
+
+  @media (min-width: 768px) {
+    margin-top: -125px;
+    padding-top: 95px;
+    background-color: $basic-yellow;
+  }
+
+  @media (min-width: 1440px) {
+
+  }
+}
+
+.map__top {
+  position: relative;
+  z-index: 6;
+  padding-top: 67px;
+  padding-bottom: 34px;
+  border-radius: 30px;
+  background-color: $basic-yellow;
+  color: $basic-blue-light;
+
+  @media (min-width: 768px) {
+    padding-bottom: 85px;
+    border-radius: 0 0 60px 60px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-top: 90px;
+    padding-bottom: 61px;
+  }
+}
+
+.map__wrapper {
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.map__address {
+  position: relative;
+  margin-bottom: 32px;
+  padding-left: 61px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 45px;
+    height: 45px;
+    background-image: url("../img/icons/map-mark.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 62px;
+    padding-left: 94px;
+
+    &::before {
+      width: 68px;
+      height: 68px;
+      top: -16px;
+    }
+
+    br {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    margin: 0;
+    margin-left: 153px;
+    padding-left: 121px;
+
+    &::before {
+      width: 90px;
+      height: 90px;
+      top: -29px;
+    }
+  }
+}
+
+.map__button {
+  border: 3px solid #192144;
+  padding: 20px 23px 19px;
+
+  @media (min-width: 768px) {
+    padding: 24px 35px 26px;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 28%;
+  }
+}
+
+.map__iframe {
+  position: relative;
+  z-index: 5;
+  margin-top: -30px;
+
+  @media (min-width: 768px) {
+    height: 581px;
+  }
+}

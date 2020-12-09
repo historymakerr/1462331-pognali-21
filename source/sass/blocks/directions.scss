@@ -1,0 +1,266 @@
+.directions {
+  position: relative;
+  z-index: 10;
+  margin-top: -100px;
+  padding-top: 148px;
+  padding-bottom: 33px;
+  border-radius: 30px;
+  background-color: #edeff6;
+
+  @media (min-width: 768px) {
+    margin-top: -100px;
+    padding-top: 131px;
+    padding-bottom: 81px;
+    border-radius: 60px;
+    background-image:
+      url("../img/flags-back-tablet.png"),
+      url("../img/directions-figure-tablet.svg");
+    background-repeat: no-repeat;
+    background-position:
+      calc(100% - 60px) 188px,
+      60px 190px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-bottom: 138px;
+  }
+}
+
+.directions__wrapper {
+  @media (min-width: 1440px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 61px;
+    grid-template-areas:
+      "list inner"
+      "list button";
+      align-items: flex-start;
+  }
+}
+
+.directions__inner {
+  @media (min-width: 1440px) {
+    padding-top: 93px;
+    padding-left: 20%;
+    grid-area: inner;
+  }
+}
+
+.directions__title {
+  margin-bottom: 20px;
+  padding-left: 25px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 59px;
+    padding-left: 0;
+  }
+}
+
+.directions__text {
+  margin-top: 0;
+  padding-left: 25px;
+
+  @media (min-width: 768px) {
+    padding-left: 0;
+  }
+}
+
+.directions__list {
+  @include clearList;
+
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: center;
+  row-gap: 10px;
+  margin-bottom: 26px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 46px;
+    row-gap: 11px;
+  }
+
+  @media (min-width: 1440px) {
+    grid-area: list;
+    margin-bottom: 0;
+    padding-top: 130px;
+    row-gap: 10px;
+  }
+}
+
+.directions__text {
+  color: $special-grey;
+  margin-bottom: 61px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 106px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 100px;
+  }
+}
+
+.direction__item {
+  display: flex;
+  flex-direction: column;
+  max-width: 270px;
+  position: relative;
+
+  @media (min-width: 768px) {
+    max-width: none;
+    min-height: 140px;
+    flex-direction: row;
+  }
+}
+
+.direction__item-image {
+  @media (min-width: 768px) {
+    height: 140px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+  }
+}
+
+.direction__item-inner {
+  max-height: 89px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 24px 24px 4px;
+  margin-top: -15px;
+  border-radius: 10px;
+  background-color: #ffffff;
+
+  @media (min-width: 768px) {
+    max-height: 140px;
+    margin-top: 0;
+    padding: 28px 29px 4px;
+    padding-right: 188px;
+    order: -1;
+    flex-grow: 1;
+    flex-direction: column;
+    border-radius: 20px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-top: 22px;
+  }
+}
+
+.direction__item-place {
+  margin-top: 0;
+  color: #000000;
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 700;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: -37px;
+    left: 2px;
+    width: 35px;
+    height: 24px;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &--thailand::before {
+    background-image: url("../img/icons/Thailand.svg");
+  }
+
+  &--france::before {
+    background-image: url("../img/icons/France.svg");
+  }
+
+  &--czech::before {
+    background-image: url("../img/icons/Czech.svg");
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 18px;
+    font-size: 24px;
+    line-height: 24px;
+
+    &--czech {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      width: 70px;
+      height: 47px;
+      top: -11px;
+      left: 100%;
+      z-index: 1000;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    &::before {
+      top: 1px;
+    }
+  }
+}
+
+.direction__item-slogan {
+  display: block;
+  opacity: 0.3;
+  font-size: 16px;
+  line-height: 18px;
+  color: $special-grey;
+
+  @media (min-width: 768px) {
+    margin-top: 5px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.direction__item-counter {
+  position: relative;
+  width: 40px;
+  margin-top: 0;
+  padding-top: 2px;
+  color: rgba($basic-blue, 0.3);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+
+  &::before {
+    position: absolute;
+    top: 5px;
+    left: -19px;
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-image: url("../img/icons/icon_user.svg");
+    background-size: cover;
+  }
+
+  @media (min-width: 768px) {
+    padding-left: 29px;
+    font-size: 20px;
+    line-height: 20px;
+
+    &::before {
+      width: 18px;
+      height: 20px;
+      top: 4px;
+      left: -1px;
+    }
+  }
+}
+
+.directions__button {
+  @media (min-width: 1440px) {
+    grid-area: button;
+    max-width: 49%;
+    display: inline-block;
+    margin-left: 20%;
+  }
+}
