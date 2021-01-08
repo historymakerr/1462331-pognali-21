@@ -16,10 +16,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.2s ease-out;
 
   &--yellow-bg {
     border-radius: 50%;
     background-color: $basic-yellow;
+  }
+
+  &:hover path {
+    fill: rgba(#192144, 0.6);
+  }
+
+  &:active path {
+    fill: rgba(#192144, 0.3);
+  }
+
+  &--yellow-bg:hover {
+    background-color: $special-yellow-dark;
+  }
+
+  &--yellow-bg:hover path {
+    fill: #192144;
+  }
+
+  &--yellow-bg:active path {
+    fill: rgba(#192144, 0.3);
   }
 
   @media (min-width: 768px) {

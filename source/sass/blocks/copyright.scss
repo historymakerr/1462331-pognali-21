@@ -2,8 +2,15 @@
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #f2f2f2;
-  align-items: center;
   padding-top: 13px;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   @media (min-width: 768px) {
     border: none;
@@ -14,6 +21,7 @@
 
 .copyright__text {
   margin: 0;
+  padding-top: 5px;
   font-size: 16px;
   font-weight: 400;
   color: $special-grey;

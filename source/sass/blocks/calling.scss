@@ -60,6 +60,15 @@
 .calling__text-link {
   color: $basic-yellow;
   text-decoration: underline;
+  transition: all 0.17s linear;
+
+  &:hover {
+    color: $special-orange;
+  }
+
+  &:active {
+    color: rgba($special-orange, 0.3);
+  }
 }
 
 .calling__input-box {
@@ -84,10 +93,49 @@
   font-size: 18px;
   line-height: 18px;
   font-weight: 700;
-  color: rgba($special-grey, 0.3);
+  color: $special-grey;
+
+  &:hover {
+    color: rgba($special-grey, 0.3);
+  }
+
+  &:focus {
+    color: #ffffff;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 4px #ffffff;
+    outline: none;
+  }
 
   &:placeholder-shown {
     font-family: "BloggerSans";
+    color: $special-grey;
+  }
+
+  &:hover::-webkit-input-placeholder {
+    font-family: "BloggerSans";
+    color: rgba($special-grey, 0.3);
+  }
+
+  &:hover::-moz-placeholder {
+    font-family: "BloggerSans";
+    color: rgba($special-grey, 0.3);
+  }
+
+  &:hover:-ms-input-placeholder {
+    font-family: "BloggerSans";
+    color: rgba($special-grey, 0.3);
+  }
+
+  &--error::-webkit-input-placeholder {
+    color: red;
+  }
+
+  &--error::-moz-placeholder {
+    color: red;
+  }
+
+  &--error:-ms-input-placeholder {
+    color: red;
   }
 
   @media (min-width: 768px) {
@@ -109,7 +157,9 @@
   width: 60px;
   font-size: 0;
   border-radius: 0 10px 10px 0;
+  border: none;
   background-color: $basic-yellow;
+  cursor: pointer;
 
   &::before {
     content: "";

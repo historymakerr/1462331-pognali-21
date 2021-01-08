@@ -26,9 +26,6 @@
   }
 
   @media (min-width: 1440px) {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
     min-height: 750px;
     padding: 0 87px 0 127px;
     background-image:
@@ -37,6 +34,16 @@
     background-repeat: no-repeat;
     background-size: auto, cover;
     background-position: 59.9% 87.4%, bottom;
+  }
+}
+
+.teaser__wrapper-center {
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
   }
 }
 
@@ -108,7 +115,7 @@
 }
 
 .teaser__user-nav {
-  margin-bottom: -21px;
+  margin-bottom: -19px;
 
   @media (min-width: 768px) {
     display: none;
@@ -135,6 +142,7 @@
   margin: 0 auto;
 
   @media (min-width: 768px) {
+    max-width: 990px;
     padding: 0 40px;
   }
 

@@ -23,7 +23,7 @@
   color: $basic-blue-light;
 
   @media (min-width: 768px) {
-    padding-bottom: 85px;
+    padding-bottom: 84px;
     border-radius: 0 0 60px 60px;
   }
 
@@ -93,6 +93,23 @@
   border: 3px solid #192144;
   padding: 20px 23px 19px;
 
+  &:hover {
+    color: #ffffff;
+    background-color: #192144;
+  }
+
+  &:hover::before {
+    border-left-color: #ffffff;
+  }
+
+  &:active {
+    color: rgba(#ffffff, 0.3);
+  }
+
+  &:active::before {
+    color: rgba(#ffffff, 0.3);
+  }
+
   @media (min-width: 768px) {
     padding: 24px 35px 26px;
   }
@@ -109,5 +126,9 @@
 
   @media (min-width: 768px) {
     height: 581px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: -125px;
   }
 }

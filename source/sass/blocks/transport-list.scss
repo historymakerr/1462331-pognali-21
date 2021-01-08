@@ -1,0 +1,116 @@
+.transport-list {
+  @include clearList;
+
+  display: flex;
+  justify-content: center;
+}
+
+.transport-list__vehicle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s linear;
+  z-index: 1000;
+
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    transition: all 0.2s linear;
+  }
+
+  &::before {
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 42px;
+    content: attr(data-tooltip);
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    background-color: #101d41;
+    border-radius: 4px;
+  }
+
+  &::after {
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+  }
+
+  & path {
+    fill: rgba(#101d41, 0.15);
+    opacity: 1;
+    transition: all 0.1s linear;
+  }
+
+  &:hover {
+    filter: drop-shadow(0px 2px 6px rgba(22, 28, 53, 0.17));
+  }
+
+  &:hover::before {
+    display: flex;
+    min-width: 170px;
+    min-height: 56px;
+  }
+
+  &:hover::after {
+    width: 1px;
+    height: 1px;
+    border: 7px solid transparent; border-bottom: 7px solid $basic-blue-light;
+  }
+
+  &:hover path {
+    fill: #b2b2b2;
+  }
+
+  &:active {
+    background-color: #e2e5f1;
+  }
+
+  &:active path {
+    fill: rgba($basic-blue-light, 0.1);
+  }
+
+  &--relevant  {
+    margin: 0;
+    padding: 0;
+
+    & path {
+      fill: #101d41;
+    }
+
+    &:hover path {
+      fill: #101d41;
+      opacity: 0.7;
+    }
+
+    &:active path {
+      fill: #101d41;
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #ffffff;
+
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+}

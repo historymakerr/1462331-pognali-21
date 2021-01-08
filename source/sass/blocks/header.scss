@@ -4,11 +4,49 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 28px 0;
+  padding: 25px 0 28px;
   transition: all .7s ease-out;
+
+  &--form {
+    padding-top: 19px;
+  }
 
   &--open-menu {
     background-color: #ffffff;
+    padding: 28px 0 37px;
+  }
+
+  &--no-js {
+    position: static;
+    margin-bottom: 424px;
+    background-color: #192144;
+
+    @media (min-width: 768px) {
+      margin-bottom: calc(910px - 132px);
+    }
+
+    @media (min-width: 1440px) {
+      position: absolute;
+      margin-bottom: 0;
+      background-color: transparent;
+    }
+  }
+
+  &--fixed {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    animation: showHeader 1s;
+  }
+
+  &--fixed .menu-list__link {
+    color: #192144;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 40px;
   }
 }
 
@@ -47,6 +85,12 @@
   }
 }
 
+.header--no-js .header__nav {
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+  }
+}
+
 .header__nav-wrapper {
   position: absolute;
   top: -2000px;
@@ -77,6 +121,23 @@
   }
 }
 
+.header--no-js .header__nav-wrapper {
+  top: 70px;
+  padding: 46px 25px 29px;
+
+  @media (min-width: 768px) {
+    top: 100px;
+    padding: 69px 98px 29px;
+  }
+
+  @media (min-width: 1440px) {
+    width: auto;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
 .header__nav-inner {
   @media (min-width: 1440px) {
     position: relative;
@@ -92,6 +153,12 @@
       background-color: #ffffff;
     }
   }
+}
+
+.header--fixed .header__nav-inner::before {
+  left: 55px;
+  width: 44px;
+  background-color: #192144;
 }
 
 .header__list {
@@ -196,6 +263,15 @@
   }
 }
 
+.header--no-js .header__nav-btn-show {
+  display: none;
+}
+
+.header--fixed .header__nav-btn-show::before,
+.header--fixed .header__nav-btn-show::after {
+  background-color: #cccccc;
+}
+
 .header__nav-login {
   display: none;
 
@@ -205,5 +281,17 @@
 
   @media (min-width: 1440px) {
     display: none;
+  }
+}
+
+@keyframes showHeader {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
   }
 }

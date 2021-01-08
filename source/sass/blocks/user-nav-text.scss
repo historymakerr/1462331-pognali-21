@@ -17,6 +17,15 @@
   line-height: 18px;
   font-weight: 700;
   text-transform: uppercase;
+  transition: all 0.2s linear;
+
+  &:hover {
+    color: $special-orange;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   &::before {
     width: 45px;
@@ -36,6 +45,14 @@
 
   &--mail::before {
     background-image: url("../img/icons/contacts_icon-mail.svg");
+  }
+
+  &--phone:hover::before {
+    background-image: url("../img/icons/contacts_icon-phone-dark.svg");
+  }
+
+  &--mail:hover::before {
+    background-image: url("../img/icons/contacts_icon-mail-dark.svg");
   }
 
   @media (min-width: 768px) {

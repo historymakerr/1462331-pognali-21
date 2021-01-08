@@ -1,0 +1,211 @@
+.my-plans {
+  margin-top: -42px;
+  padding-top: 26px;
+  padding-bottom: 75px;
+  background-color: $special-blue-light;
+  border-radius: 30px 30px 0 0;
+
+  @media (min-width: 768px) {
+    padding-top: 53px;
+    padding-bottom: 121px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: -34px;
+    padding-bottom: 164px;
+    border-radius: 60px;
+  }
+}
+
+.my-plans__title {
+  margin-top: 0;
+  margin-bottom: 31px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 52px;
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 50px;
+  }
+}
+
+.my-plans__list {
+  @include clearList;
+
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 10px;
+  counter-reset: plan-number;
+
+  @media (min-width: 768px) {
+    row-gap: 11px;
+  }
+
+  @media (min-width: 1440px) {
+    row-gap: 16px;
+    margin-right: -75px;
+  }
+}
+
+.my-plans__item {
+  padding: 24px 25px;
+  color: $basic-blue-light;
+  background-color: #ffffff;
+  border-radius: 10px;
+  counter-increment: plan-number;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+
+  @media (min-width: 768px) {
+    padding: 38px 25px 16px 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "place place"
+      "info change";
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+  }
+
+  @media (min-width: 1440px) {
+    align-items: flex-start;
+    grid-template-areas:
+      "place inner";
+    grid-template-columns: 1fr 1fr;
+    padding: 34px 46px 39px 36px;
+  }
+}
+
+.my-plans__item-place {
+  position: relative;
+  display: flex;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0;
+
+  &::before {
+    margin-right: 4px;
+    font: inherit;
+    content: counter(plan-number) ".";
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 18px;
+    padding-bottom: 36px;
+    justify-content: space-between;
+    grid-area: place;
+    font-size: 24px;
+    line-height: 24px;
+
+    &::before {
+      order: 2;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: -40px;
+      right: -25px;
+      background-color: #cbced9;
+      height: 1px;
+      content: "";
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    justify-content: flex-start;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    &::before {
+      order: 0;
+      margin-right: 6%;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.my-plans__item-inner {
+  @media (min-width: 1440px) {
+    display: flex;
+    grid-area: inner;
+    padding-top: 3px;
+  }
+}
+
+.my-plans__item-people,
+.my-plans__item-date {
+  margin: 0;
+}
+
+.my-plans__item-info {
+  margin-bottom: 23px;
+
+  p {
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    grid-area: info;
+    display: flex;
+    margin-bottom: 0;
+
+    p {
+      letter-spacing: 0.1em;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    flex-grow: 1;
+  }
+}
+
+.my-plans__item-people {
+  margin-bottom: 5px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    width: 48.7%;
+  }
+
+  @media (min-width: 1440px) {
+    width: auto;
+    margin-right: 7%;
+  }
+}
+
+.my-plans__item-button {
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  opacity: 0.3;
+  cursor: pointer;
+
+
+  @media (min-width: 768px) {
+    grid-area: change;
+    justify-self: end;
+    padding-right: 13px;
+  }
+
+  @media (min-width: 768px) {
+    margin-left: auto;
+    padding-right: 0;
+    letter-spacing: 0.08em;
+  }
+}
